@@ -20,7 +20,7 @@ class Guard:
                                 '\n181-270 minutes = up to three letter grade reduction;'\
                                 '\nover 270 minutes remaining = up to four letter grade reduction. '\
 
-        self.message_end = '\n\n\nThanks,\n Julie \n\n GILB'
+        self.message_end = '\n\n\nThanks,\n Julie \n\n **This is an automated email created by a script that takes in data from mbatt, if you believe any of this is wrong please come talk to me and I can fix it.'
 
 
     def read_file(self):
@@ -58,7 +58,7 @@ class Guard:
 
             if (self.dict_guard.get(key).get('unexcused')):
                 main_message = main_message + self.unexcused_message
-            elif(self.dict_guard.get(key).get('minutes to make up') > 0):
+            if(self.dict_guard.get(key).get('minutes to make up') > 0):
                 main_message = main_message + self.makeup_message
             else:
                 main_message = main_message+ '\nYou have no unexcused absences and no minutes to make up, awesome!'
